@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Etiquetas meta para configurar los caracteres a utf8 y configurar la escala de la pagina-->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Titulo de la pagina-->
+		<title>Ejercicio 4 - POO</title>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				color: #fff;
+				text-align: center;
+				background: linear-gradient(to left, rgb(112, 201, 71), rgb(44, 176, 209));
+			}
+			.encabezado{
+				font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+				padding: 1em;
+				font-size: 1.5em;
+			}
+			#demo{
+				font-size: 2em;
+				font-weight: 600;
+				font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			}
+		</style>
+	</head>
+<body>
+	<div class="encabezado">
+		<!--Declaración de encabezados e identificación del estudiante-->
+		<h2>Clase JavaScript</h2>
+		<p>Cómo usar una clase de JavaScript</p>
+		<p>
+			<b>Alumno:</b> José Ignacio Vega.<br>
+			<b>C.I:</b> 30.099.836<br>
+			<b>Sección:</b> INT01
+		</p>
+	</div>
+		<!--Párrafo donde se insertará la información de los objetos con JavaScript-->
+		<p id="demo"></p>
+	<script>
+		// Declaración de dos clases, cada una con su constructor que se encarga de crear el objeto que devolverá la clase
+		class Perro {
+		constructor(nombre, edad, raza, color, pesoKg, sexo) {
+			// Datos del objeto que se creará, el this hace referencia al objeto en sí
+			this.nombre = nombre;
+			this.edad = edad;
+			this.raza = raza;
+			this.color = color;
+			this.peso = pesoKg;
+			this.sexo = sexo;
+		}
+		// Segunda clase
+		}
+		class CitaVeterinaria {
+			// Segundo constructor de objeto, pero sobre la cita veterinaria
+		constructor(nombre, medico, fecha, paciente) {
+			this.nombre = nombre;
+			this.medico = medico;
+			this.fecha = fecha;
+			this.paciente = paciente;
+		}
+		}
+		// Creación de objetos de cada clase, pasando sus valores correspondientes
+		const miPerro = new Perro('Smoky', 5, 'poodle', 'blanco', 4.9, 'macho');
+		const miCita = new CitaVeterinaria('AnimalPets', 'Álvaro Navas', new Date(), 'Smoky');
+
+		// Creación de los textos sobre la información del perro y la cita veterinaria (ambos objetos)
+		const textoDePerro = `${miPerro.nombre} es un perro ${miPerro.color} ${miPerro.sexo} 
+		raza ${miPerro.raza} con ${miPerro.edad} años y con un peso de ${miPerro.peso}kg.`
+
+		const textoDeCita = `<br><br>${miCita.paciente} tiene una cita en la veterinaria 
+		${miCita.nombre} con el médico ${miCita.medico} el día ${miCita.fecha}`;
+
+		// Se atribuyen los textos al elemento con id "demo"
+		document.getElementById("demo").innerHTML = textoDePerro+textoDeCita;
+
+	</script>
+</body>
+</html>
